@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html ng-app="pruebaFormulario">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>repl.it</title>
+        <link href="index.css" rel="stylesheet" type="text/css" />
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    </head>
+    <body ng-controller="formularioController as vm">
+    	<div class="container-fluid">
+    		<form name="prueba" novalidate ng-submit="vm.guardarEmail(prueba)">
+			  <div class="form-group">
+			  	
+			    <label for="email">Email address:</label>
+			    <input type="email" ng-model="vm.email" class="form-control" name="email" id="email" required>
+			    <div class="alert alert-danger" ng-show="prueba.email.$error.required">malo</div>
+			  </div>
+			  {{prueba.email}}
+			  <span ng-bind="vm.email"></span>
+			  <div class="form-group">
+			    <label for="pwd">Password:</label>
+			    <input type="password" class="form-control" id="pwd">
+			  </div>
+			  <div class="checkbox">
+			    <label><input type="checkbox"> Remember me</label>
+			  </div>
+			  <button type="submit" class="btn btn-default">Submit</button>
+			</form>
+		</div>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.js"></script>
+	<script src="index.js"></script>
+    </body>
+    
+</html>
